@@ -1,2 +1,2 @@
-# set_pip_mirror
+# 使用说明
 一键设置 pip 国内下载镜像

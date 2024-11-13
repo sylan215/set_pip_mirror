@@ -1,7 +1,18 @@
-# 使用说明
-一键设置 pip 国内下载镜像。  
+# 一键设置pip源
 
-直接运行脚本，或者把代码进行集成，均可。  
+一键设置 pip 国内安装源，跨平台支持；
 
-已在 windows 10、windows 11、Cetos7 上实际验证可用。  
+## 安装
 
+```
+pip install set_pip_mirror
+```
+
+## 样例
+
+``` python
+from set_pip_mirror import set_mirror
+
+# 一键设置国内镜像源
+set_mirror()
+```

@@ -21,8 +21,7 @@ def write_to_file(filename):
 
 def set_windows_mirror():
     # 设置 windows 环境的 python 镜像
-    username = os.getlogin()
-    pip_dir = 'C:\\Users\\' + username + '\\pip'
+    pip_dir = os.path.expanduser('~') + '\\pip'
     if not os.path.isdir(pip_dir):
         os.mkdir(pip_dir)
     pip_inf = pip_dir + '\\pip.ini'
@@ -31,8 +30,7 @@ def set_windows_mirror():
 
 def set_linux_mirror():
     # 设置 linux 环境的 python 镜像
-    username = os.getlogin()
-    pip_dir = '/home/' + username + '/.pip'
+    pip_dir = os.path.expanduser('~') + '/.pip'
     if not os.path.isdir(pip_dir):
         os.mkdir(pip_dir)
     pip_inf = pip_dir + '/pip.conf'
@@ -44,7 +42,7 @@ def set_mirror():
     os_name = platform.system()
     if os_name == "Windows":
         set_windows_mirror()
-    elif os_name == "Linux":
+    else:
         set_linux_mirror()
 
 
